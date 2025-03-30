@@ -4,24 +4,28 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  /*
-  let starters = [
+  let myPokemon = [
     {name: "Happy", id: "6"},
     {name: "Zappy", id: "25"},
     {name: "Frederick", id: "1"}
   ];
+
+  /*
+  function addPokemon() {
+    myPokemon.push({name: "Name", id: Math.floor(Math.random() * 1025 + 1).toString()});
+    console.log(myPokemon);
+  }
   */
 
-  const [myPokemon, setMyPokemon] = useState([]);
+  //const [myPokemon, setMyPokemon] = useState([]);
 
+  /*
   function addPokemon() {
     let newPokemon = [...myPokemon]; //Copy the existing state
     newPokemon.push({name: "Name", id: Math.floor(Math.random() * 1025 + 1).toString()});
-    console.log(newPokemon);
     setMyPokemon(newPokemon);
   }
-
-  // Going to break into steps later with different files
+  */
 
   return (
     <>
@@ -35,12 +39,12 @@ function App() {
           )
         })}
       </ul>
-      <button onClick={addPokemon}>Add Random Pokémon</button>
+      {/*<button onClick={addPokemon}>Add Random Pokémon</button>*/}
     </>
   )
 }
 
-// PokemonCard component (may move into own file during lesson)
+// PokemonCard component
 
 function PokemonCard(props) {
   let myName = props['name'];
@@ -50,8 +54,8 @@ function PokemonCard(props) {
 
   return (
     <div className="pokemon-card">
-      <div className="pokemon-image">
-        <img src={imageUrl} alt={myName} />
+      <div className="pokemon-image-container">
+        <img src={imageUrl} alt={myName} className="pokemon-image" />
       </div>
       <input type="text" placeholder={myName} className="pokemon-name"></input>
     </div>
